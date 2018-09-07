@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <cstdlib>
 using namespace std;
 /* draw functions
 #################################################################################################*/
@@ -16,7 +17,7 @@ int drawWord(string word, char used[]) {
 	int usedPosition = 0;
 	// stores the output
 	string output = "  ";
-	
+
 	while(wordPosition < wordLength) {
 		if(word[wordPosition] == used[usedPosition]) {
 			output = output + word[wordPosition] + ' ';
@@ -33,7 +34,7 @@ int drawWord(string word, char used[]) {
 
 	// outputs the word with the letter showing that they have guessed
 	cout << output << endl;
-	
+
 	// reset
 	usedPosition = 0;
 	while(used[usedPosition] != '0') {
@@ -47,7 +48,7 @@ int drawWord(string word, char used[]) {
 // draws the man and stand
 int drawPerson(int missed) {
 	int remainingLines = 4;
-	
+
 	cout << "\n\n\n ______" << endl;
 	cout << "|      |" << endl;
 
@@ -105,7 +106,14 @@ int draw(int missed, string word, char used[]) {
 /*#########################################################################################
 draw functions*/
 
+char userInput() {
+	char output;
 
+	cout << "What is your guess? ";
+	cin >> output;
+
+	return output;
+}
 
 
 int main() {
@@ -113,7 +121,7 @@ int main() {
 	string words[] = {"computer", "physics"};
 	// amount of letters that were incorect
 	int missed = 0;
-	
+
 	// stores the letters that were used
 	// start with filling everthing with 0
 	char used[26];
@@ -124,19 +132,25 @@ int main() {
 		usedPosition += 1;
 	}
 	// reset usedPosition for futher use
-	usedPosition = 0;
-	
+ 	usedPosition = 0;
+/*	// picks random word from words[]
+	srand(time(NULL));
+	string word = words[rand() % sizeof(words)];
+*/
 
-	// need to make it random
 	string word = words[0];
+
+/*
 	// test
 	used[usedPosition] = 'o';
 	usedPosition += 1;
 	used[usedPosition] = 'c';
+*/
+	draw(missed, word, used);
+
+	used[usedPosition] = userInput();
 
 	draw(missed, word, used);
 
-	
-	
 	return 0;
 }
