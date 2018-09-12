@@ -8,7 +8,7 @@ using namespace std;
 
 // outputs the words with the characters that user has guessed
 // those that have not been guess are shown as "_"
-int drawWord(string word, char used[]) {
+bool drawWord(string word, char used[]) {
 	// keeps track where it is at in the word
 	int wordPosition = 0;
 	// word length
@@ -17,6 +17,9 @@ int drawWord(string word, char used[]) {
 	int usedPosition = 0;
 	// stores the output
 	string output = "  ";
+	// keeps track how many letters entered are correct
+	// later on it is used to tell if the word has been completed
+	int correct = 0;
 
 	while(wordPosition < wordLength) {
 		if(word[wordPosition] == used[usedPosition]) {
@@ -24,11 +27,13 @@ int drawWord(string word, char used[]) {
 			// advance and reset
 			wordPosition += 1;
 			usedPosition = 0;
+			correct += 1;
 		} else if(used[usedPosition+1] != '0') {
 			usedPosition += 1;
 		} else {
 			output += "_ ";
 			wordPosition += 1;
+			usedPosition = 0;
 		}
 	}
 
@@ -37,17 +42,52 @@ int drawWord(string word, char used[]) {
 
 	// reset
 	usedPosition = 0;
+	// outputs the word
 	while(used[usedPosition] != '0') {
 		cout << used[usedPosition] << " ";
 		usedPosition += 1;
 	}
 	cout << endl;
-	return 0;
+
+	// checks if the word has been compleated
+	if(correct == (wordLength)) {
+		return true;
+	}
+	return false;
 }
 
+
 // draws the man and stand
-int drawPerson(int missed) {
+int drawPerson(string word, char used[]) {
+	// keeps track on how many lines are left when drawing the body
+	// allows it to keep the stand (the '|' on the left) the same size/number of occurances
 	int remainingLines = 4;
+	int usedPosition = 0, wordPosition = 0, wordLength = word.length();
+        int missed = 0, correct = 0, lettersUsed = 0;
+
+        usedPosition = 0;
+        while(used[usedPosition] != '0') {
+                lettersUsed += 1;
+                usedPosition += 1;
+        }
+
+	if(lettersUsed != 0) {
+		while(wordPosition < wordLength) {
+			if(word[wordPosition] == used[usedPosition]) {
+				correct += 1;
+				wordPosition += 1;
+				usedPosition += 1;
+			} else if(used[usedPosition+1] != '0') {
+				usedPosition += 1;
+			} else {
+				wordPosition += 1;
+				usedPosition += 1;
+			}
+		}
+	}
+
+	missed = lettersUsed - correct;
+
 
 	cout << "\n\n\n ______" << endl;
 	cout << "|      |" << endl;
@@ -96,11 +136,12 @@ int drawPerson(int missed) {
 }
 
 // runs both draw funcions for ease of use in main()
-int draw(int missed, string word, char used[]) {
-	drawPerson(missed);
-	drawWord(word, used);
-
-	return 0;
+bool draw(string word, char used[]) {
+	drawPerson(word, used);
+	if(drawWord(word, used)) {
+		return true;
+	}
+	return false;
 }
 
 /*#########################################################################################
@@ -119,8 +160,6 @@ char userInput() {
 int main() {
 	// words that will be used for the game
 	string words[] = {"computer", "physics"};
-	// amount of letters that were incorect
-	int missed = 0;
 
 	// stores the letters that were used
 	// start with filling everthing with 0
@@ -133,24 +172,23 @@ int main() {
 	}
 	// reset usedPosition for futher use
  	usedPosition = 0;
-/*	// picks random word from words[]
-	srand(time(NULL));
-	string word = words[rand() % sizeof(words)];
-*/
 
-	string word = words[0];
+	// picks random word from words[]
+	// size of words[]
+	int size = sizeof(words) / sizeof(words[0]);
+	string word = words[rand() % size];
 
-/*
-	// test
-	used[usedPosition] = 'o';
-	usedPosition += 1;
-	used[usedPosition] = 'c';
-*/
-	draw(missed, word, used);
+	bool cont = true;
 
-	used[usedPosition] = userInput();
+	draw(word, used);
+	while(cont) {
+                used[usedPosition] = userInput();
+                usedPosition += 1;
 
-	draw(missed, word, used);
-
+		if(draw(word, used)) {
+			cout << "Congralations" << endl;
+			cont = false;
+		}
+	}
 	return 0;
 }
