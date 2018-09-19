@@ -205,9 +205,15 @@ int main() {
 	if(cont == 1) {
 		cout << "Congralations" << endl << endl;
 	} else if(cont == 2) {
-		cout << "You lose" << endl << endl;
+		cout << "You lose" << endl << "The word was " << word << endl << endl;
 	} else {
 		cout << "ERROR ERROR" << endl;
 	}
+
+
+	cout << "Enter 'q' to exit ";
+	string end;
+	// waits till the user hit a letter/number to close
+	cin >> end;
 	return 0;
 }
