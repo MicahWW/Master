@@ -1,0 +1,19 @@
+[01;34m.[00m
+./01alarm.sh
+[01;34m./alarmSounds[00m
+[01;32m./alarmSounds/playRandom.py[00m
+[01;32m./a.out[00m
+./bcopy.sh
+[01;34m./games[00m
+[01;32m./games/a.out[00m
+./games/hangman.cpp
+[01;32m./games/hangman.exe[00m
+[01;34m./old[00m
+./old/alarm.py
+./old/newAlarm.py
+./old/play.sh
+./README.md
+[01;34m./zzold[00m
+./zzold/clean.cpp
+
+4 directories, 12 files

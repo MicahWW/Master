@@ -1,0 +1,7 @@
+.
+./alarmSounds
+./games
+./old
+./zzold
+
+4 directories
