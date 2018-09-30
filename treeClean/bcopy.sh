@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-tree -fio .tree.txt
+tree -fiQo .tree.txt
 
 cat .tree.txt | while read name
 do
