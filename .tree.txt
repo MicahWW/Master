@@ -1,0 +1,26 @@
+[01;34m.[00m
+[01;34m"./alarm"[00m
+"./alarm/01alarm.sh"
+[01;34m"./alarm/alarmSounds"[00m
+[01;32m"./alarm/alarmSounds/playRandom.py"[00m
+[01;34m"./games"[00m
+[01;32m"./games/hangman"[00m
+"./games/hangman.cpp"
+[01;32m"./games/hangman.exe"[00m
+"./README.md"
+[01;34m"./tools"[00m
+"./tools/bcopy.sh"
+"./tools/dirTree.txt"
+"./tools/find.sh"
+[01;34m"./tools/sourceFiles"[00m
+"./tools/sourceFiles/treeFileClean.cpp"
+[01;32m"./tools/treeFileClean"[00m
+"./tools/tree.txt"
+[01;34m"./treeClean"[00m
+[01;34m"./zzold"[00m
+[01;34m"./zzold/old"[00m
+"./zzold/old/alarm.py"
+"./zzold/old/newAlarm.py"
+"./zzold/old/play.sh"
+
+8 directories, 15 files
