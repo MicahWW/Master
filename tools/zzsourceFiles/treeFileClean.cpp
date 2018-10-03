@@ -8,11 +8,15 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+	// takes input from comand line
 	string fileName = argv[1], line;
 
+	// opens file
 	fstream file;
+	// c_str() because .open is picky on how file name is inputed
 	file.open(fileName.c_str());
 
+	// index for first and second "
 	int index0, index1;
 	bool cont = true;
 
@@ -23,7 +27,8 @@ int main(int argc, char* argv[]) {
 
 		// once it reaches an empty line there should be no need for anything after
 		if(line.length() != 0) {
-			index0 = line.find('"');
+			// add one to get rid of period
+			index0 = line.find('"') + 1;
 			index1 = line.find('"', index0+1);
 
 			cout << line.substr(index0+1, index1-index0-1) << endl;

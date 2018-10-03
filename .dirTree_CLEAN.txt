@@ -1,8 +1,0 @@
-./alarm
-./alarm/alarmSounds
-./games
-./tools
-./tools/sourceFiles
-./treeClean
-./zzold
-./zzold/old

@@ -8,7 +8,7 @@ int main() {
 	dirTree.open(".dirTree_CLEAN.txt");
 
 	string line;
-	string dirTreeArray[];
+	string dirTreeArray[50];
 	int count = 0;
 
 	while(!dirTree.eof()) {
@@ -17,5 +17,22 @@ int main() {
 		dirTreeArray[count] = line;
 		count++;
 	}
+	dirTree.close();
+
+	fstream tree;
+	tree.open(".tree_CLEAN.txt");
+
+	count = 0;
+
+	while(!tree.eof()) {
+		getline(tree, line);
+
+		if(line != dirTreeArray[count]) {
+			cout << line << endl;
+		} else {
+			count++;
+		}
+	}
+
 	return 0;
 }
