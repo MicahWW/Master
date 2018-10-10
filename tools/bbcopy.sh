@@ -30,8 +30,7 @@ do
 	#reads the current file line by line
 	cat $currentFile | while read fileLine
 	do
-		echo -n $fileLine > .fileLineSwap.txt
-						#fill in below
+		echo -n "$fileLine" > .fileLineSwap.txt
 		~/copy .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
 
 	done
@@ -40,7 +39,7 @@ do
 done
 
 
-
+#clean up
 #rm .tree.txt
 #rm .dirTree.txt
 #rm .tree_CLEAN.txt
