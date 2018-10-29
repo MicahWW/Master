@@ -28,11 +28,10 @@ do
 	touch $currentDir"ENCODED"$fileName".encode"
 
 	#reads the current file line by line
-	cat $currentFile | while read fileLine
+	cat -T $currentFile | while read fileLine
 	do
-		echo -n $fileLine > .fileLineSwap.txt
-						#fill in below
-		~/Master/encode/encodeFile .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
+		echo -n "$fileLine" > .fileLineSwap.txt
+		~/Master/zzold/copy .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
 
 	done
 	echo $currentDir"ENCODED"$fileName".encode"
@@ -40,7 +39,7 @@ do
 done
 
 
-
+#clean up
 #rm .tree.txt
 #rm .dirTree.txt
 #rm .tree_CLEAN.txt
