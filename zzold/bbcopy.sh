@@ -32,7 +32,7 @@ do
 	do
 		echo -n $fileLine > .fileLineSwap.txt
 						#fill in below
-		~/copy .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
+		~/Master/encode/encodeFile .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
 
 	done
 	echo $currentDir"ENCODED"$fileName".encode"
