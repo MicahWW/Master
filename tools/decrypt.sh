@@ -20,17 +20,18 @@ do
 	currentFile+=$fileName
 
 	decryptFile=$decryptDir
-	decryptFile=$fileName
+	decryptFile+=$fileName
 	decryptFile=${decryptFile::-7}
 
-	touch $currentFile".test"
+#	echo $decryptFile".test"
+	touch $decryptFile".test"
 
-	cat  $currentFile | while read fileLine
-	do
-		echo -n "$fileLine" > .fileLineSwap.txt
-		~/Master/zzold/copy .fileLineSwap.txt >> $decryptFile
-		~/Master/tools/toTab $decryptFile > $decryptFile
-	done
+#	cat  $currentFile | while read fileLine
+#	do
+#		echo -n "$fileLine" > .fileLineSwap.txt
+#		~/Master/zzold/copy .fileLineSwap.txt >> $decryptFile
+#		~/Master/tools/toTab $decryptFile > $decryptFile
+#	done
 done
 
 
