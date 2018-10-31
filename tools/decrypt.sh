@@ -26,12 +26,12 @@ do
 #	echo $decryptFile".test"
 	touch $decryptFile".test"
 
-#	cat  $currentFile | while read fileLine
-#	do
-#		echo -n "$fileLine" > .fileLineSwap.txt
-#		~/Master/zzold/copy .fileLineSwap.txt >> $decryptFile
-#		~/Master/tools/toTab $decryptFile > $decryptFile
-#	done
+	cat  $currentFile | while read fileLine
+	do
+		echo -n "$fileLine" > .fileLineSwap.txt
+		~/Master/zzold/copy .fileLineSwap.txt >> $decryptFile".test"
+		~/Master/tools/toTab $decryptFile > $decryptFile".test"
+	done
 done
 
 
