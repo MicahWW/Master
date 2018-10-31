@@ -16,11 +16,14 @@ done
 
 cat .tree_FINAL.txt | while read fileName
 do
-	currentFile=$decryptDir
+	currentFile=$currentDir
 	currentFile+=$fileName
-	decryptFile=${currentFile::-7}
 
-	touch $currentFile
+	decryptFile=$decryptDir
+	decryptFile=$fileName
+	decryptFile=${decryptFile::-7}
+
+	touch $currentFile".test"
 
 	cat  $currentFile | while read fileLine
 	do
