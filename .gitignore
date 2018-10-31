@@ -4,3 +4,7 @@
 *.out
 #doesn't upload the dir encode/
 encode
+
+#temporary for testing
+*.encode
+*.test
