@@ -24,11 +24,11 @@ do
 
 	cat  $currentFile | while read fileLine
 	do
-		echo -n "$fileLine" > .fileLineSwap
+		echo -n "$fileLine" > .fileLineSwap.txt
 		~/Master/zzold/copy .fileLineSwap.txt >> $decryptFile
 		~/Master/tools/toTab $decryptFile > $decryptFile
 	done
-
+done
 
 
 #clean up
