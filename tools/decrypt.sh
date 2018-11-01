@@ -32,6 +32,7 @@ do
 		~/Master/zzold/copy .fileLineSwap.txt >> $decryptFile".test"
 		~/Master/tools/toTab $decryptFile > $decryptFile".test"
 	done
+	echo $decryptFile
 done
 
 
