@@ -8,3 +8,11 @@ encode
 #temporary for testing
 *.encode
 *.test
+.dirTree.txt
+.dirTree_CLEAN.txt
+.fileLineSwap.txt
+.tree.txt
+.tree_CLEAN.txt
+.tree_Final.txt
+.tree_FINAL.txt
+
