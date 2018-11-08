@@ -20,15 +20,15 @@ do
 	currentFile+=$fileName
 
 	touch $currentDir"ENCODED"$fileName".encode"
-
+	echo $currentDir"ENCODED"$fileName".encode"
+	
 	#reads the current file line by line
 	cat -T $currentFile | while read fileLine
 	do
 		echo -n "$fileLine" > .fileLineSwap.txt
+#		~/Master/encode/encodeFile .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
 		~/Master/zzold/copy .fileLineSwap.txt >> $currentDir"ENCODED"$fileName".encode"
-
 	done
-	echo $currentDir"ENCODED"$fileName".encode"
 
 done
 
