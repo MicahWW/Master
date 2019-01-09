@@ -1,1 +1,1 @@
-grep -rnw '.' -e "$1"
+grep -rn '.' -e "$1"
