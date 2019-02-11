@@ -1,3 +1,6 @@
+use pdf
+
+
 I sought the Lord
 And He answered me
 And delivered me
@@ -37,6 +40,10 @@ Magnify the Lord with me
 Come exalt His name together
 Glorify the Lord with me
 Come exalt His name forever
+
+
+
+split parts
 
 Let us bless the Lord
 Every day and night
