@@ -20,6 +20,7 @@ int main() {
 	getline(file_days, line);
 
 	// have to add a period
+	// I think you have to add period to say use this current working dir
 	line = "." + line;
 
 	ifstream first;
@@ -40,6 +41,7 @@ int main() {
 	while(!file_days.eof()) {
 		getline(file_days, line);
 
+		// I think this means that there is no more files
 		line = "." + line;
 		if(line == ".") {
 			return 3;
@@ -48,7 +50,7 @@ int main() {
 		output.open(line.c_str());
 
 		if(output.is_open()) {
-			if(day < 7) {
+			if(day < 6) {
 				day++;
 			} else {
 				day = 0;
