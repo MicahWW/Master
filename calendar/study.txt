@@ -1,0 +1,9 @@
+1. decimal to BCD
+2. a little DeMorgan's
+3. use NAND and NOR gates only to form a circuit
+	i) look over the conversions of gates to NAND and NOR
+4. K-maps
+5. VHDL code
+	i)  look at syntax
+	ii) decelration
+
