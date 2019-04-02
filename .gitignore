@@ -1,6 +1,7 @@
 #doesn't upload the mp3 used for alarm
 *.mp3
 #doesn't upolad .outs, usually would just be test outputs like a.out
+#if the .out file is renamed then it will be upload
 *.out
 #doesn't upload the dir encode/
 encode
@@ -15,4 +16,9 @@ encode
 .tree_CLEAN.txt
 .tree_Final.txt
 .tree_FINAL.txt
+<<<<<<< HEAD
 .day
+=======
+
+*.day
+>>>>>>> 8317acdf588cc9b5bdbc202016f43c3d713f0458
