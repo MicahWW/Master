@@ -172,7 +172,7 @@ char userInput() {
 
 int main() {
 	// words that will be used for the game
-	string words[] = {"computer", "physics", "school", "study", "english", "something", "anything", "blah", "deskop", "laptop", "youtube", "google"};
+	string words[] = {"computer", "physics", "school", "study", "english", "something", "anything", "blah", "desktop", "laptop", "youtube", "google"};
 
 	// stores the letters that were used
 	// start with filling everthing with 0
