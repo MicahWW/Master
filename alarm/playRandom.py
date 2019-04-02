@@ -19,4 +19,6 @@ song = random.choice(dircache.listdir(dir))
 song = os.path.join(dir, song)
 
 
-subprocess.call(["play", song])
+print song
+
+#subprocess.call(["play", song])
