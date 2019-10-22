@@ -33,6 +33,6 @@ int main() {
 			count++;
 		}
 	}
-
+	tree.close();
 	return 0;
 }
