@@ -6,6 +6,8 @@
 #doesn't upload the dir encode/
 encode
 
+hockey
+
 #temporary for testing
 *.encode
 *.test
